@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         _userid = "Taka"
         if let window = window {
-            var firstViewController = ZLSwipeableViewController()
+            var firstViewController = FlickViewController()
             window.rootViewController = UINavigationController(rootViewController: firstViewController)
             window.makeKeyAndVisible()
         }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2060B4FAADB38FA3C39F6155 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E80A2B2C800EB0290C643FD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		2D2FC3721B6F09CB000793A3 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FC3711B6F09CB000793A3 /* json.swift */; };
-		2D498F3F1B6DD6CD00461969 /* ZLSwipeableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D498F3E1B6DD6CD00461969 /* ZLSwipeableViewController.swift */; };
+		2D498F3F1B6DD6CD00461969 /* FlickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D498F3E1B6DD6CD00461969 /* FlickViewController.swift */; };
 		2D782F471B6DC3C400994A95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D782F461B6DC3C400994A95 /* AppDelegate.swift */; };
 		2D782F491B6DC3C400994A95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D782F481B6DC3C400994A95 /* ViewController.swift */; };
 		2D782F4C1B6DC3C400994A95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D782F4A1B6DC3C400994A95 /* Main.storyboard */; };
@@ -32,7 +32,7 @@
 
 /* Begin PBXFileReference section */
 		2D2FC3711B6F09CB000793A3 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
-		2D498F3E1B6DD6CD00461969 /* ZLSwipeableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableViewController.swift; sourceTree = "<group>"; };
+		2D498F3E1B6DD6CD00461969 /* FlickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickViewController.swift; sourceTree = "<group>"; };
 		2D782F411B6DC3C400994A95 /* Flick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D782F451B6DC3C400994A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D782F461B6DC3C400994A95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 				2D782F4D1B6DC3C400994A95 /* Images.xcassets */,
 				2D782F4F1B6DC3C400994A95 /* LaunchScreen.xib */,
 				2D782F441B6DC3C400994A95 /* Supporting Files */,
-				2D498F3E1B6DD6CD00461969 /* ZLSwipeableViewController.swift */,
+				2D498F3E1B6DD6CD00461969 /* FlickViewController.swift */,
 				2DBDDC331B6DDF22004AD039 /* ZLSwipeableView.swift */,
 				2DBDDC351B6DDF5A004AD039 /* CardView.swift */,
 				2D2FC3711B6F09CB000793A3 /* json.swift */,
@@ -303,7 +303,7 @@
 				2D782F491B6DC3C400994A95 /* ViewController.swift in Sources */,
 				2DBDDC341B6DDF22004AD039 /* ZLSwipeableView.swift in Sources */,
 				2D782F471B6DC3C400994A95 /* AppDelegate.swift in Sources */,
-				2D498F3F1B6DD6CD00461969 /* ZLSwipeableViewController.swift in Sources */,
+				2D498F3F1B6DD6CD00461969 /* FlickViewController.swift in Sources */,
 				2D2FC3721B6F09CB000793A3 /* json.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

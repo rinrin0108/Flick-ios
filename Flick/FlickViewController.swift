@@ -1,5 +1,5 @@
 //
-//  SwipeableViewController.swift
+//  FlickViewController.swift
 //  Flick
 //
 //  Created by Takaaki on 2015/08/01.
@@ -20,10 +20,14 @@ import UIColor_FlatColors
 import Cartography
 import ReactiveUI
 import CoreLocation
+import Photos
 
-class ZLSwipeableViewController: UIViewController,CLLocationManagerDelegate {
+class FlickViewController: UIViewController,CLLocationManagerDelegate {
     
     var swipeableView: ZLSwipeableView!
+    
+    // アルバム.
+    var photoAssets = [PHAsset]()
     
     var myLocationManager:CLLocationManager!
     
@@ -33,6 +37,7 @@ class ZLSwipeableViewController: UIViewController,CLLocationManagerDelegate {
     
     var reloadBarButtonItem = UIBarButtonItem(title: "Reload", style: .Plain) { item in }
     var catchBarButtonItem = UIBarButtonItem(title: "Catch", style: .Plain) { item in }
+    var albumBarButtonItem = UIBarButtonItem(title: "Album", style: .Plain) { item in }
     var leftBarButtonItem = UIBarButtonItem(title: "←", style: .Plain) { item in }
     var upBarButtonItem = UIBarButtonItem(title: "↑", style: .Plain) { item in }
     var rightBarButtonItem = UIBarButtonItem(title: "→", style: .Plain) { item in }
@@ -91,6 +96,12 @@ class ZLSwipeableViewController: UIViewController,CLLocationManagerDelegate {
                 self.getGeo()
             }
         }
+        
+        albumBarButtonItem.addAction() { item in
+            //アルバム取得
+//            self.getAlbum()
+        }
+        
 
         leftBarButtonItem.addAction() { item in
             self.swipeableView.swipeTopView(inDirection: .Left)
@@ -108,7 +119,7 @@ class ZLSwipeableViewController: UIViewController,CLLocationManagerDelegate {
         var fixedSpace = UIBarButtonItem(barButtonSystemItem: .FixedSpace, action: {item in})
         var flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, action: {item in})
         
-        var items = [fixedSpace, reloadBarButtonItem, flexibleSpace ,catchBarButtonItem ,flexibleSpace, leftBarButtonItem, flexibleSpace, upBarButtonItem, flexibleSpace, rightBarButtonItem, flexibleSpace, downBarButtonItem, fixedSpace]
+        var items = [fixedSpace, reloadBarButtonItem, flexibleSpace ,catchBarButtonItem , flexibleSpace ,albumBarButtonItem ,flexibleSpace, leftBarButtonItem, flexibleSpace, upBarButtonItem, flexibleSpace, rightBarButtonItem, flexibleSpace, downBarButtonItem, fixedSpace]
         toolbarItems = items
         
         swipeableView = ZLSwipeableView()
@@ -168,6 +179,25 @@ class ZLSwipeableViewController: UIViewController,CLLocationManagerDelegate {
             view1.bottom == view2.bottom - 100
         }
     }
+    
+//    func getAlbum() {
+//        photoAssets = []
+//        
+//        // ソート条件を指定
+//        var options = PHFetchOptions()
+//        options.sortDescriptors = [
+//            NSSortDescriptor(key: "creationDate", ascending: false)
+//        ]
+//        
+//        // 画像をすべて取得
+//        var assets: PHFetchResult = PHAsset.fetchAssetsWithMediaType(.Image, options: nil)
+//        assets.enumerateObjectsUsingBlock { (asset, index, stop) -> Void in
+//            self.photoAssets.append(asset as! PHAsset)
+//        }
+//        println(photoAssets)
+//
+//    }
+//    
     
     func getCard(){
         println("getCard")
@@ -273,6 +303,32 @@ class ZLSwipeableViewController: UIViewController,CLLocationManagerDelegate {
         let sanitizedName = name.stringByReplacingOccurrencesOfString(" ", withString: "")
         let selector = "flat\(sanitizedName)Color"
         return UIColor.swift_performSelector(Selector(selector), withObject: nil) as! UIColor
+    }
+}
+
+
+extension PHPhotoLibrary {
+    
+    //ユーザーに許可を促す.
+    class func Authorization(){
+        
+        PHPhotoLibrary.requestAuthorization { (status) -> Void in
+            
+            switch(status){
+            case .Authorized:
+                println("Authorized")
+                
+            case .Denied:
+                println("Denied")
+                
+            case .NotDetermined:
+                println("NotDetermined")
+                
+            case .Restricted:
+                println("Restricted")
+            }
+            
+        }
     }
 }
 
