@@ -12,10 +12,24 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var _lat:String?
+    var _lng:String?
+    
+    var _userid:String?
+    
+    var _error:String?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        _userid = "Taka"
+        if let window = window {
+            var firstViewController = ZLSwipeableViewController()
+            window.rootViewController = UINavigationController(rootViewController: firstViewController)
+            window.makeKeyAndVisible()
+        }
         return true
     }
 
